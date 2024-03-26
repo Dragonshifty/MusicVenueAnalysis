@@ -1,12 +1,15 @@
 package com.sc02;
 
 public class Artist {
-    public String name;
-    public String venue;
-    public String day;
-    public String date;
-    public String time;
-    public String status;
+    private String name;
+    private String venue;
+    private int venueCapacity;
+    private String day;
+    private String date;
+    private String time;
+    private String status;
+    private String leadPerformerGender = "Unknown";
+    private int leadPerformerAge;
 
     public Artist(String name, String venue, String day, String date, String time, String status)
     {
@@ -18,6 +21,55 @@ public class Artist {
         this.status = status;
     }
 
+    public void setVenueCapacity(int venueCapacity){
+        this.venueCapacity = venueCapacity;
+    }
+
+    public void setLeadPerformerGender(String leadPerformerGender)
+    {
+        this.leadPerformerGender = leadPerformerGender;
+    }
+
+    public void setLeadPerformerAge(int leadPerformerAge){
+        this.leadPerformerAge = leadPerformerAge;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getVenue(){
+        return venue;
+    }
+
+    public int getVenueCapacity(){
+        return venueCapacity;
+    }
+
+    public String getDay(){
+        return day;
+    }
+
+    public String getDate(){
+        return date;
+    }
+
+    public String getTime(){
+        return time;
+    }
+
+    public String getStatus(){
+        return status;
+    }
+
+    public String getLeadPerformerGender(){
+        return leadPerformerGender;
+    }
+
+    public int getLeadPerformerAge(){
+        return leadPerformerAge;
+    }
+
     @Override
         public String toString() {
             return "Artist: " + name +
@@ -25,7 +77,9 @@ public class Artist {
                     "\nDay: " + day +
                     "\nDate: " + date +
                     "\nTime: " + time +
-                    "\nStatus: " + status +
+                    "\nGender: " + leadPerformerGender +
+                    "\nAge: " + leadPerformerAge +
+                    "\nTicket Status: " + status +
                     "\n";
         }
 }
