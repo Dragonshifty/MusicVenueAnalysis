@@ -1,26 +1,47 @@
 package com.sc02;
-import org.jsoup.*; 
 import org.jsoup.nodes.*; 
-import org.jsoup.select.*;
-import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 public class ScrapeAndBake {
     VenueURLs venueURLs = new VenueURLs();
     Scraper scraper = new Scraper();
     ExtractElements extractElements = new ExtractElements();
     JsonConverter jsonConverter = new JsonConverter();
+    CSVConverter csvConverter = new CSVConverter();
+    HTMLConverter htmlConverter = new HTMLConverter();
 
     public void makeItSo(){
+
+        convertToHtml();
+        convertToCSV();
+        csvConverter.joinCSVs();
+    }
+
+    private void convertToHtml(){
         Map<String, String> venues = venueURLs.getVenueURLs();
+        List<String> venueList = venueURLs.getVenueList();
 
-        Document doc = scraper.scrapePage(venues.get("O2 Academy Bristol"));
+        try {
+            for (String venue : venueList){
+                Document doc = scraper.scrapePage(venues.get(venue));
+                htmlConverter.convertToHTML(doc, venue);
+                Thread.sleep(5000);
+            }
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }  
+        System.out.println("Got all HTML components");
+    }
 
-        List<Artist> artistList = extractElements.Extract(doc);
+    private void convertToCSV(){
+        List<String> venueList = venueURLs.getVenueList();
 
-        jsonConverter.processToMap(artistList);
+        for (String venue : venueList){
+            Document doc = htmlConverter.loadDocFromHTML(venue);
+            List<Artist> artistList = extractElements.Extract(doc);
+            csvConverter.convertToCSV(artistList, venue);
+        }
+        System.out.println("Converted all CSVs");
     }
 }

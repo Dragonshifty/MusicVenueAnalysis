@@ -7,22 +7,25 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class HTMLConverter {
-    private final String fileName = "scraped_html.html";
+    private final String currentMonth = "April";
 
-    public void convertToHTML (Document doc)
+    public void convertToHTML (Document doc, String venueName)
     {
+        String fileName = venueName + " " + currentMonth + ".html"; 
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(doc.outerHtml());
+            System.out.println(fileName + " created");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public Document loadDocFromHTML (){
+    public Document loadDocFromHTML (String venueName){
         Document loadedDoc = new Document(null);
+        String fileName = venueName + " " + currentMonth + ".html";
         try {
             loadedDoc = Jsoup.parse(new File(fileName), "UTF-8");
-
+            System.out.println(fileName + " loaded");
         } catch (IOException e) {
             e.printStackTrace();
         }

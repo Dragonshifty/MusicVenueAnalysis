@@ -11,14 +11,14 @@ public class Artist {
     private String leadPerformerGender = "Unknown";
     private int leadPerformerAge;
 
-    public Artist(String name, String venue, String day, String date, String time, String status)
+    public Artist(String name, String venue, String day, String date, String time)
     {
         this.name = name;
         this.venue = venue;
         this.day = day;
         this.date = date;
         this.time = time;
-        this.status = status;
+        // this.status = status;
     }
 
     public void setVenueCapacity(int venueCapacity){

@@ -77,6 +77,28 @@ public class Old {
         // System.out.println(element.text());
     }
 
+    public void makeItSo(){
+
+        // convertToHtml();
+
+        // convertToCSV();
+
+        
+
+        // Map<String, String> venues = venueURLs.getVenueURLs();
+
+        // Document doc = scraper.scrapePage(venues.get("O2 Academy Edinburgh"));
+        
+
+        // htmlConverter.convertToHTML(doc, "O2 Academy Edinburgh");
+        // Document doc = htmlConverter.loadDocFromHTML("O2 Academy Edinburgh");
+        // List<Artist> artistList = extractElements.Extract(doc);
+
+        // jsonConverter.processToMap(artistList);
+        // csvConverter.convertToCSV(artistList, "O2 Academy Edinburgh");
+        
+    }
+
     private static void read(){
         Document docRead = new Document(null);
         try{
@@ -155,7 +177,7 @@ public class Old {
             String time = eventElement.selectFirst(".time").text();
             String status = eventElement.selectFirst(".ticket-status").text();
 
-            Artist performer = new Artist(artist, venue, day, date, time, status);
+            Artist performer = new Artist(artist, venue, day, date, time);
             artistList.add(performer);
     }
         System.out.println(artistList.size());
