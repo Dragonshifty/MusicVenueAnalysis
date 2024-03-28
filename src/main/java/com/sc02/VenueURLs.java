@@ -12,7 +12,7 @@ public class VenueURLs {
         venues.put("O2 Academy Birmingham", "https://www.academymusicgroup.com/o2academybirmingham/events/month/2024-04");
         venues.put("O2 Academy Bournemouth", "https://www.academymusicgroup.com/o2academybournemouth/events/month/2024-04");
         venues.put("O2 Academy Bristol", "https://www.academymusicgroup.com/o2academybristol/events/month/2024-04");
-        venues.put("O2 Academy Brixton", "https://www.academymusicgroup.com/o2academybrixton/events/month/2024-05");
+        venues.put("O2 Academy Brixton", "https://www.academymusicgroup.com/o2academybrixton/events/month/2024-04");
         venues.put("O2 Academy Edinburgh", "https://www.academymusicgroup.com/o2academyedinburgh/events/month/2024-04");
         venues.put("O2 Academy Glasgow", "https://www.academymusicgroup.com/o2academyglasgow/events/month/2024-04");
         venues.put("O2 Academy Islington", "https://www.academymusicgroup.com/o2academyislington/events/month/2024-04");

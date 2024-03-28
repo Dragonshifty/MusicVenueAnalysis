@@ -20,7 +20,7 @@ public class CSVConverter {
         String outputFile = venueName + " " + currentMonth + ".csv";
 
         try (CSVWriter csvWriter = new CSVWriter(new FileWriter(outputFile))){
-            csvWriter.writeNext(new String[]{"Name", "Venue", "Stage", "Capacity", "Date", "Time", "Lead Performer Gender", "Lead Performer Age"});
+            csvWriter.writeNext(new String[]{"Name", "Venue", "Stage", "Capacity", "Date", "Time", "Solo or Group", "Lead Performer Gender", "Lead Performer Age", "Genre"});
 
             for (Artist artist : artists) {
                 String dateAssembly = artist.getDay() + " " + artist.getDate() + " " + currentMonth;
@@ -33,9 +33,10 @@ public class CSVConverter {
                     String.valueOf(capacities.get(artist.getVenue())),
                     dateAssembly,
                     artist.getTime(),
+                    artist.getSoloOrGroup(),
                     artist.getLeadPerformerGender(),
-                    String.valueOf(artist.getLeadPerformerAge())
-                    // status
+                    String.valueOf(artist.getLeadPerformerAge()),
+                    artist.getGenre()
                 });
             }
             System.out.println("Created csv ");
@@ -50,7 +51,7 @@ public class CSVConverter {
         List<String> venueList = venueURLs.getVenueList();
 
         try (CSVWriter csvWriter = new CSVWriter(new FileWriter(joinedCSVFileName))){
-            csvWriter.writeNext(new String[]{"Name", "Venue", "Stage", "Capacity", "Date", "Time", "Lead Performer Gender", "Lead Performer Age"});
+            csvWriter.writeNext(new String[]{"Name", "Venue", "Stage", "Capacity", "Date", "Time", "Solo or Group", "Lead Performer Gender", "Lead Performer Age", "Genre"});
 
             for (String venueName : venueList){
                 String fileName = venueName + " " + currentMonth + ".csv";

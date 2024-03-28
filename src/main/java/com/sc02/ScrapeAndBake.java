@@ -12,7 +12,6 @@ public class ScrapeAndBake {
     HTMLConverter htmlConverter = new HTMLConverter();
 
     public void makeItSo(){
-
         convertToHtml();
         convertToCSV();
         csvConverter.joinCSVs();
@@ -26,7 +25,7 @@ public class ScrapeAndBake {
             for (String venue : venueList){
                 Document doc = scraper.scrapePage(venues.get(venue));
                 htmlConverter.convertToHTML(doc, venue);
-                Thread.sleep(5000);
+                Thread.sleep(5000); // Delay so as not to upset the server
             }
         } catch (InterruptedException e){
             e.printStackTrace();

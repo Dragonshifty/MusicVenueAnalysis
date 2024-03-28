@@ -19,20 +19,15 @@ public class JsonConverter {
             Map<String, Object> JsonHeader = new LinkedHashMap<>();
             String dateAssembly = artist.getDay() + " " + artist.getDate() + " " + currentMonth;
             venueName = artist.getVenue() + " " + currentMonth;
-            
-            // JsonHeader.put("Lead Performer", artist.getName());
-
-            // Map<String, Object> details = new HashMap<>();
 
             JsonHeader.put("Venue", artist.getVenue());
             JsonHeader.put("Capacity", capacities.get(artist.getVenue()));
             JsonHeader.put("Date", dateAssembly);
             JsonHeader.put("Time", artist.getTime());
+            JsonHeader.put("Solo or Group", artist.getSoloOrGroup());
             JsonHeader.put("Lead Performer Gender", artist.getLeadPerformerGender());
             JsonHeader.put("Lead Performer Age", artist.getLeadPerformerAge());
-            JsonHeader.put("Ticket Status", artist.getStatus());
-
-            // JsonHeader.put("Details", details);
+            JsonHeader.put("Genre", artist.getGenre());
 
             artistMap.put(artist.getName(), JsonHeader);
         }

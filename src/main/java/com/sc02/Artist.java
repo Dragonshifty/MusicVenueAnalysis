@@ -7,9 +7,10 @@ public class Artist {
     private String day;
     private String date;
     private String time;
-    private String status;
+    private String soloOrGroup = "Group";
     private String leadPerformerGender = "Unknown";
     private int leadPerformerAge;
+    private String genre = " ";
 
     public Artist(String name, String venue, String day, String date, String time)
     {
@@ -18,7 +19,6 @@ public class Artist {
         this.day = day;
         this.date = date;
         this.time = time;
-        // this.status = status;
     }
 
     public void setVenueCapacity(int venueCapacity){
@@ -58,8 +58,8 @@ public class Artist {
         return time;
     }
 
-    public String getStatus(){
-        return status;
+    public String getSoloOrGroup(){
+        return soloOrGroup;
     }
 
     public String getLeadPerformerGender(){
@@ -70,6 +70,10 @@ public class Artist {
         return leadPerformerAge;
     }
 
+    public String getGenre(){
+        return genre;
+    }
+
     @Override
         public String toString() {
             return "Artist: " + name +
@@ -77,9 +81,10 @@ public class Artist {
                     "\nDay: " + day +
                     "\nDate: " + date +
                     "\nTime: " + time +
+                    "\nSolo or Group: " + soloOrGroup +
                     "\nGender: " + leadPerformerGender +
                     "\nAge: " + leadPerformerAge +
-                    "\nTicket Status: " + status +
+                    "\nGenre: " + genre +
                     "\n";
         }
 }
