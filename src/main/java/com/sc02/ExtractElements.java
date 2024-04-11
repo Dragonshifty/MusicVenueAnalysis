@@ -17,8 +17,6 @@ public class ExtractElements {
             String day = eventElement.selectFirst(".day").text();
             String date = eventElement.selectFirst(".date").text();
             String time = eventElement.selectFirst(".time").text();
-            // String status = eventElement.selectFirst(".ticket-status").text();
-
             Artist performer = new Artist(artist, venue, day, date, time);
             artistList.add(performer);
         }

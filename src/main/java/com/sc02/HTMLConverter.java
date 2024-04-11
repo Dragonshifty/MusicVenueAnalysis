@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class HTMLConverter {
-    private final String currentMonth = "April";
+    private final String currentMonth = "";
 
     public void convertToHTML (Document doc, String venueName)
     {

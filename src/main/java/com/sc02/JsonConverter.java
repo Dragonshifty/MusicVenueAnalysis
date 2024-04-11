@@ -7,7 +7,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 
 public class JsonConverter {
-    private final String currentMonth = "April";
+    private final String currentMonth = "";
     private String venueName;
     private Map<String, Object> artistMap = new LinkedHashMap<>();
     private VenueCapacityValues venueCapacityValues = new VenueCapacityValues();

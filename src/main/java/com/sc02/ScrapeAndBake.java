@@ -12,9 +12,11 @@ public class ScrapeAndBake {
     HTMLConverter htmlConverter = new HTMLConverter();
 
     public void makeItSo(){
-        convertToHtml();
-        convertToCSV();
-        csvConverter.joinCSVs();
+        // Not to be run all at once - comment out as needed to run each section
+        convertToHtml(); // Run  first
+        convertToCSV(); // Run second
+        csvConverter.joinCSVs(); // Run second
+        csvConverter.CSVComparitor(); // Run Third with filenames inserted
     }
 
     private void convertToHtml(){
