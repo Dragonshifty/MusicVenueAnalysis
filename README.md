@@ -7,4 +7,3 @@ This program is design to be run in sections. Ideally I would have given it a UI
 - Although the program can scrape and output direct to CSV, I have first scraped to HTML in five second increments (so as not to stress the server), and extracted elements from there.
 - The program then combines all the CSVs into one joined CSV, where appplicable for each month.
 - Lastly, I added a functionality in the CSVConverter file that extracts the two previous months values from their respective CSVs, converts them to objects and then compares with the most recent month's CSV to fill in values automatically where they appear to save time.
-- 
